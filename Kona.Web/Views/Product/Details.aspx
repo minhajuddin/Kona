@@ -11,7 +11,7 @@
     <div id="hdr3">
     <ul class="topNav" id="menulist">
           <%foreach (Category c in Model.ParentCategories) { %>
-            <li class="first"><a href="#" title="<%=c.Description %>"><%=c.Name %></a></li>
+            <li class="first"><a href="<%=Url.Action("Index","Product",new {id=c.ID}) %>" title="<%=c.Description %>"><%=c.Name %></a></li>
           <%} %>
 
     </ul>
@@ -72,17 +72,23 @@
             
             <%} %>
             <div class="prodWidget">
-            <h4>Related Products</h4>
-            <hr />
+            <h2 style="margin-top:20px;margin-bottom:20px;">You might also like...</h2>
 
             
-            <%foreach (Product p in Model.SelectedProduct.Related) { %>
+            <%foreach (Product p in Model.SelectedProduct.Related) {
+                  string desc = p.Descriptors.First().Body;
+                  %>
+            <h4><%=p.Name %></h4>
+            <hr />
             <div class="fltleft prodItem">
                     <a href="<%=Url.Action("Details","Product",new {id=p.SKU}) %>">
                     <img src="/content/productimages/<%=p.DefaultImage %>" alt="<%=p.Name %>" width="115" height="115" />
-                    
+
+            </div>
+            <div class="fltright prodText">
+                <p><%=desc.Substring(0,200)%></p>
+                                    
                     <p style="text-align:center">
-                        <a href="<%=Url.Action("Details","Product",new {id=p.SKU}) %>"><%=p.Name%></a>
                         <div class="product">
                             <input type="hidden" class="product-title" value="<%=p.Name %>">
                             <input type="hidden" class="product-price" value="<%=p.Price.ToString("C") %>">
@@ -90,7 +96,9 @@
                             </div>
                         </div>
                     </p>
-            </div>                
+            </div>
+            <div class="clearLayout">
+            </div>               
             <%} %>
             </div>
         </div>

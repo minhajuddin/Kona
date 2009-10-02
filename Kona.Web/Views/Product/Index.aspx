@@ -1,10 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ProductListViewModel>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ProductListViewModel>" %>
 
-<asp:Content ID="indexTitle" ContentPlaceHolderID="HeadContent" runat="server">
-    <title>Welcome to Kona</title>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+
+    <title>Kona: <%=Model.SelectedCategory.Name %></title>
+
 </asp:Content>
 
-<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <!--Top Navigation-->
     <div id="hdr3">
     <ul class="topNav" id="menulist">
@@ -43,59 +45,35 @@
 
     <div class="colmiddle fltleft">
 
-        <div>
-            <img src="/content/images/hiking_front.jpg" alt="Save 30% on selected hiking gear" />
-        </div>
-        
-        <!--Product widget with 1 product-->
-        <div class="prodWidget">
-        <%var featured = Model.FeaturedProducts.Take(1).SingleOrDefault(); %>
-            <h4>
-                Featured</h4>
-            <hr />
-            <div class="fltleft prodItem">
-                    <a href="<%=Url.Action("Details","Product",new {id=featured.SKU}) %>">
-                    <img src="/content/productimages/<%=featured.DefaultImage %>" alt="<%=featured.Name %>" width="115" height="115" />
-                    
-                    <p style="text-align:center">
-                        <a href="<%=Url.Action("Details","Product",new {id=featured.SKU}) %>"><%=featured.Name %></a>
-                        <div class="product">
-                            <input type="hidden" class="product-title" value="<%=featured.Name %>">
-                            <input type="hidden" class="product-price" value="<%=featured.Price.ToString("C") %>">
-                            <div class="googlecart-add-button" tabindex="0" role="button" title="Add to cart">
-                            </div>
-                        </div>
-                    </p>
-            </div>
-            <div class="fltright prodText">
-                <h5><%=featured.Name %></h5>
-                <p><%=featured.Descriptors.First().Body %></p>
-            </div>
-            <div class="clearLayout">
-            </div>
-        </div>
         
         
         
         <!--Product widget with three products-->
         <div class="prodWidget">
-            <h4>Blowout Specials</h4>
+            <%foreach (Product p in Model.FeaturedProducts) {
+                  string desc = p.Descriptors.First().Body;
+                  %>
+            <h4><%=p.Name %></h4>
             <hr />
-            <%foreach (Product p in Model.FeaturedProducts.Skip(1).Take(3)) { %>
             <div class="fltleft prodItem">
-           
-                <a href="<%=Url.Action("Details","Product",new {id=p.SKU}) %>"><img src="/content/productimages/<%=p.DefaultImage %>" alt="<%=p.Name %>" width="115" height="115" /></a>
-                <p><a href="<%=Url.Action("Details","Product",new {id=p.SKU}) %>"><%=p.Name %></a></p>
-                <p style="text-align:center">
-                    <div class="product">
-                        <input type="hidden" class="product-title" value="<%=p.Name %>">
-                        <input type="hidden" class="product-price" value="<%=p.Price.ToString("C") %>">
-                        <div class="googlecart-add-button" tabindex="0" role="button" title="Add to cart">
-                        </div>
-                    </div>
-                </p>
+                    <a href="<%=Url.Action("Details","Product",new {id=p.SKU}) %>">
+                    <img src="/content/productimages/<%=p.DefaultImage %>" alt="<%=p.Name %>" width="115" height="115" />
 
             </div>
+            <div class="fltright prodText">
+                <p><%=desc.Substring(0,200)%></p>
+                                    
+                    <p style="text-align:center">
+                        <div class="product">
+                            <input type="hidden" class="product-title" value="<%=p.Name %>">
+                            <input type="hidden" class="product-price" value="<%=p.Price.ToString("C") %>">
+                            <div class="googlecart-add-button" tabindex="0" role="button" title="Add to cart">
+                            </div>
+                        </div>
+                    </p>
+            </div>
+            <div class="clearLayout">
+            </div>   
             <%} %>
             <div class="clearLayout">
             </div>

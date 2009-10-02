@@ -13,9 +13,26 @@ namespace Kona.App.Services {
             _repo = repo;
         }
 
+        public ProductListViewModel GetCategoryModel(int categoryID) {
+            var result = new ProductListViewModel();
 
-        public HomepageViewModel GetHomeModel() {
-            var result = new HomepageViewModel();
+            //add the featured product
+            result.FeaturedProducts = _repo.GetProducts(categoryID);
+
+            //categories
+            result.Categories = _repo.GetCategories();
+            result.SelectedCategory = _repo.GetCategories().SingleOrDefault(x => x.ID == categoryID);
+
+            //organize them
+            result.Categories.ToList().ForEach(x => x.SubCategories = result.Categories.Where(y => y.ParentID == x.ID).ToList());
+
+
+            return result;
+
+
+        }
+        public ProductListViewModel GetHomeModel() {
+            var result = new ProductListViewModel();
 
             //add the featured product
             result.FeaturedProducts = _repo.GetFeaturedProducts();

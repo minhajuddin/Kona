@@ -22,9 +22,16 @@ namespace Kona.Controllers
         //
         // GET: /Product/
 
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View();
+            ProductListViewModel model=null;
+            //if an ID is sent in it's a category
+            if (id.HasValue) {
+                model = _service.GetCategoryModel((int)id);
+            } else {
+                RedirectToAction("Index", "Home");
+            }
+            return View(model);
         }
 
         //
