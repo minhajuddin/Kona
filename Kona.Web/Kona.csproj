@@ -325,6 +325,11 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Kona.mdf">
+    </Content>
+    <Content Include="App_Data\Kona_log.ldf">
+      <DependentUpon>Kona.mdf</DependentUpon>
+    </Content>
     <Content Include="Views\Product\Details.aspx" />
     <Content Include="Views\Product\Index.aspx" />
     <Content Include="Views\Shared\Site.Master" />
@@ -359,7 +364,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
