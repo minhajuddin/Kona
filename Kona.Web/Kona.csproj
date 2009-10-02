@@ -329,11 +329,6 @@
     <Content Include="Views\Product\Index.aspx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
-    <Content Include="App_Data\Kona.mdf">
-    </Content>
-    <Content Include="App_Data\Kona_log.ldf">
-      <DependentUpon>Kona.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\css\blue.css" />
     <Content Include="Content\images\bkgnd_header.gif" />
     <Content Include="Content\images\bkgnd_navgradient.gif" />
@@ -364,6 +359,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
