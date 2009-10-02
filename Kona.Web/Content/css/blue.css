@@ -1,0 +1,298 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+/*Yahoo browser reset
+----------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
+blockquote,th,td {margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
+ol,ul { list-style:none; }
+caption,th { text-align:left; }
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; }
+q:before,q:after { content:”; }
+abbr,acronym { border:0; }
+
+/*Defaults
+----------------------------------------------------------*/
+body {font: normal 65% "Tahoma", "Helvetica Neue", "Lucida Grande", Segoe UI, Arial, Helvetica, Verdana, sans-serif;
+/*background:url(Kona_Homepage2.png) no-repeat top center;*/
+/*background:url(../images/bodyBackground.gif) center repeat-y;*/
+text-align:left; color:#142e18;}
+
+
+/*Content
+----------------------------------------------------------*/
+
+/* ====== Headings ====== */
+h1 {font-size: 2.6em; font-weight:normal; font-style: normal;} /* 26px / 10px = 2.6em */
+h2 {font-size: 2.4em; font-weight:normal; font-style: normal;} /* 24px / 10px = 2.4em */
+h3 {font-size: 2.2em; font-weight:normal; font-style: normal;} /* 22px*/
+h4 {font-size: 1.8em; font-weight:normal; font-style: normal;} /*18px*/
+h5 {font-size: 1.5em; font-weight:700; font-style: normal;} /*15px*/
+h6 {font-size: 1.3em; font-weight:600; font-style: normal;} /*13px*/
+p {font-size: 1.2em; font-weight:normal; font-style: normal; line-height:1.6em; padding:.4em 0em .5em 0em;} /*12px */
+
+/* ====== links  ====== */
+a { color: #1c3c21; text-decoration: none; }
+a:focus, a:hover { text-decoration: underline; }
+a:visited { color:#1c3c21; }
+
+/* ====== Lists ======*/
+/* numbered list */
+ol.simpleList li{list-style-type: decimal;}
+
+/* standard list */
+.simpleList {padding:.0em 0em .5em 1em;}
+ul.simpleList li{list-style-type:disc; font-size:1.2em; margin-left:1em; line-height:1.8em;}
+
+
+/* leftnav list */
+ul.leftnavList li{list-style:none; font-size:1.2em; margin-left:1em; line-height:1.8em;}
+
+/* ====== Tables ====== */
+th {font-size: 1.2em; font-weight:bold; font-style: normal; padding:.2em .5em .5em .5em; background:#e2e7e0;}
+td {font-size: 1.2em; font-weight:normal; font-style: normal; padding:.2em .5em .5em .5em;}
+
+/* ====== Elements ====== */
+
+hr {color:#707c72; background-color:#707c72; height:1px;}
+
+/* ====== Forms ====== */
+
+fieldset {
+margin: 1em;
+padding: .5em;
+border: 1px solid #d8d8d8;
+}
+
+legend {
+font-size: 1.4em;
+font-weight: 600;
+padding: .2em;
+}
+
+label{
+	float:left;
+	width:10em;
+}
+
+p.formEntry{
+margin: 2px 12px 10px 10px;
+}
+
+input.textbox {
+width: 2em;
+border: 1px solid #CCC;
+}
+
+input.password {
+width: 200px;
+border: 1px solid #CCC;
+}
+
+input.confirmPassword {
+width: 200px;
+border: 1px solid #CCC;
+}
+
+input[type="radio"] {
+margin:1em 0em .2em 1em;
+}
+
+input[type="checkbox"] {
+}
+
+input[type="text"] {
+}
+
+input[type="button"] {
+font-weight: 500;
+padding: .4em;
+margin: .4em 0em 0em 0em;
+color: #333;
+border-top: 1px solid #CCC;
+border-right: 1px solid #a8aeb6;
+border-bottom: 1px solid #a8aeb6;
+border-left: 1px solid #CCC;
+background: #dcdfe2;
+cursor:pointer;
+}
+
+input[type="submit"] {
+font-weight: 500;
+padding: .4em;
+margin: .4em 0em 0em 0em;
+color: #333;
+border-top: 1px solid #CCC;
+border-right: 1px solid #a8aeb6;
+border-bottom: 1px solid #a8aeb6;
+border-left: 1px solid #CCC;
+background: #dcdfe2;
+cursor:pointer;
+}
+
+/*Layout
+----------------------------------------------------------*/
+
+#hdr1 {
+	width:100%; /* 960px / 10px = 96em */
+	height:3.60em; /* 36px / 10px = 3.6em */
+	background-color:#557190;
+	background:url(/content/images/bkgnd_header.gif) repeat-x top left;
+	/*border:1px #FF0000 solid;*/
+	}
+	
+#hdr2 {
+	width:100em; /* 960px */ 
+	margin:0 auto;
+	}
+
+#hdr3 {
+	width:100em; /* 960px */
+	height:2.8em; 
+	margin:1em auto 1em auto;
+	background:url(/content/images/bkgnd_navgradient.gif) repeat-x bottom left #e2e7e0;
+	border:1px #c5d0ca solid;
+	}
+
+#bdy {
+	width:100em; /* 960px */
+	margin:0 auto;
+	}
+	
+#ftr1 {
+	width:100em; /* 960px */
+	height:2.8em; 
+	margin:1em auto 1em auto;
+	overflow:hidden;
+	text-align:center;
+	border-top:1px #c5d0ca solid;
+}
+
+/*  left column
+----------------------------------------------------------*/
+	
+.colleft {
+	width: 18em; /*180px*/
+	margin:0 1em 0 0;
+}
+
+/*  em based containors - Used for middle column 2 or 3 column layout
+----------------------------------------------------------*/
+
+.colmiddle {width: 50.9em;} /*509px*/
+
+.colmiddle780 {width: 78em; padding:2em 0em 0em 0em;} /*780px*/
+
+/* %based containors
+----------------------------------------------------------*/
+.content100 {width: 100%;} /*100%*/
+
+.content75 {width: 75%;} /*75%*/
+
+.content60 {width: 60%;} /*60%*/
+
+.content50 {width: 50%;} /*50%*/
+
+.content48 {width: 48%;} /*48% - For those times when 50/50 just dosen't work ;O)*/
+
+.content45 {width: 45%;} /*45%*/
+
+.content40 {width: 40%;} /*40%*/
+
+.content33 {width: 33%;} /*33%*/
+
+.content25 {width: 25%;} /*25%*/
+
+/* Right column
+----------------------------------------------------------*/
+
+.colright {
+	width: 24.8em;
+	margin:0em 0em 0em 1em;
+	}
+
+/* Top navigation pane
+----------------------------------------------------------*/
+
+ul.topNav
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+	float:left;
+	font-size: 1.3em;
+}
+
+ul.topNav li
+{
+	float:left;
+	/*background:url(images/themes/autumn/TopNavDivider.gif) no-repeat top right;*/
+}
+
+ul.topNav li a
+{
+	display:block;
+	padding:.4em 1.4em .2em 1.4em;
+	text-decoration:none;
+	float:left;
+}
+
+ul.topNav li a:hover
+{
+	display:block;
+	text-decoration:none;
+	float:left;
+}
+
+/* Left navigation modules
+----------------------------------------------------------*/
+
+.leftnavMod {margin:1.2em 0em 1em 1em;}
+
+/* Main widgets
+----------------------------------------------------------*/
+
+.prodWidget {padding:1em 0em;}
+
+.prodItem {text-align:center; width:33%;}
+
+.prodText {width:66%;}
+
+/* Sidebar widgets
+----------------------------------------------------------*/
+
+.sidebarWidget {padding:.5em; margin:0em 0em 1em 0em; background:url('/content/images/bkgnd_sideWidgetGradient.gif') repeat-x top right #FFF; border: 1px #dbe0db solid;}
+
+.sidebarContent {margin:1.8em .5em; background:#FFF;}
+
+
+/* Extensions
+----------------------------------------------------------*/
+
+.fltleft {float: left;} /*Use this class to float anything to the left*/
+
+.fltright {float: right;}  /*Use this class to float anything to the left*/
+
+.cntr {margin:0 auto;}  /*Center*/
+
+.clearLayout {clear:both;}  /*Use this class clear layout*/
+
+.disabled {color:#CCC;}
+
+.alert {color:#FF0000;}
+
+.font2 {font-family:"Comic Sans MS";}
+
+
+/* Backgrounds
+----------------------------------------------------------*/
+.leftNav {background:url(/content/images/bkgnd_SideNavgradient.gif) repeat-y top left;}
+
+/* product results
+----------------------------------------------------------*/
+ul.product-results { margin:14px; }
+ul.product-results li { list-style:none; width:180px; float:left; margin-left:7px; height:215px; text-align:center;}
+ul.product-results li h3 { font-size:100%; }
