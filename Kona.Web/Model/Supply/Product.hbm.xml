@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Kona"
+				   namespace="Kona.Model">
+	<class name="Product"
+		   table="Products" lazy="false">
+
+		<id name="SKU">
+			<generator class="assigned"/>
+		</id>
+		<property name="Name" column="ProductName" not-null="true"/>
+		<property name="Price" column="BasePrice" not-null="true" />
+        <property name="WeightInPounds" column="BasePrice" not-null="true" />
+        <property name="DateAvailable" column="BasePrice" not-null="true" />
+        <property name="InventoryStatusID" column="BasePrice" not-null="true" />
+        <property name="EstimatedDelivery" column="BasePrice" not-null="true" />
+        <property name="AllowBackOrder" column="BasePrice" not-null="true" />
+        <property name="IsTaxable" column="BasePrice" not-null="true" />
+        <property name="DefaultImageFile" column="BasePrice" />
+        <property name="AmountOnHand" column="BasePrice" not-null="true" />
+        <property name="AllowPreOrder" column="BasePrice" not-null="true" />
+    </class>
+</hibernate-mapping>

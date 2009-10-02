@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Kona"
+				   namespace="Kona.Model">
+	<class name="Descriptor"
+		   table="ProductDescriptors" lazy="false">
+
+		<id name="DescriptorID">
+			<generator class="identity"/>
+		</id>
+		<property name="Title" not-null="true"/>
+		<property name="Body" not-null="true" />
+    </class>
+</hibernate-mapping>

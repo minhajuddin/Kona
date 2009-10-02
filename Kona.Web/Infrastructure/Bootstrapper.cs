@@ -16,6 +16,8 @@ using StructureMap.Attributes;
 using StructureMap.Pipeline;
 using Kona.Model;
 using Kona.App.Repositories;
+using NHibernate;
+using Kona;
 
 namespace Commerce.MVC.Web {
     public static class Bootstrapper {
@@ -30,7 +32,9 @@ namespace Commerce.MVC.Web {
             
             ForRequestedType<IStoreRepository>()
                 .TheDefaultIsConcreteType<LinqRepository>();
-            
+
+            ForRequestedType<ISession>()
+                .TheDefault.Is.ConstructedBy(x => MvcApplication.SessionFactory.GetCurrentSession());
 
            
         }

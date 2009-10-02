@@ -12,6 +12,7 @@ namespace Kona.App.Repositories {
         public LinqRepository() {
             _db = new DB();
         }
+
         IQueryable<Category> MapCategory(IQueryable<Kona.Linq.Model.Category> query) {
             return from c in query
                    select new Category {
@@ -23,6 +24,7 @@ namespace Kona.App.Repositories {
                    };
          
         }
+
         IQueryable<Descriptor> MapDescriptor(IQueryable<Kona.Linq.Model.ProductDescriptor> query) {
             return from d in query
                    select new Descriptor {
@@ -50,9 +52,11 @@ namespace Kona.App.Repositories {
                        
                    };
         }
+
         public IQueryable<Product> GetProducts() {
             return MapProduct(_db.Products);
         }
+        
         public Product GetProduct(string sku) {
             var query = _db.Products.Where(x => x.SKU == sku);
 
@@ -67,6 +71,7 @@ namespace Kona.App.Repositories {
             result.Related = MapProduct(related);
             return result;
         }
+
         public IQueryable<Product> GetProducts(int categoryID) {
             var query = from p in _db.Products
                         join cp in _db.Categories_Products on p.SKU equals cp.SKU
